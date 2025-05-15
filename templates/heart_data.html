@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heart Attack Risk</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            font-family: 'Bakbak One', sans-serif;
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 40px;
+            min-height: 100vh;
+        }
+
+        .left-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .left-img {
+            width: 480px;
+            animation: slideIn 2s ease-out forwards;
+            opacity: 0;
+        }
+
+        .glow-effect {
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
+            border-radius: 20px;
+        }
+
+        .title-left {
+            font-size: 48px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-300px);
+                opacity: 0;
+                filter: blur(10px);
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+                filter: blur(0);
+            }
+        }
+
+        .form-section {
+            flex: 1.2;
+            background: rgba(133, 133, 133, 0.21);
+            padding: 40px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-title {
+            font-size: 42px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        input, select {
+            padding: 14px;
+            font-size: 18px;
+            border-radius: 8px;
+            border: none;
+        }
+
+        .predict-button {
+            margin-top: 30px;
+            width: 100%;
+            padding: 18px;
+            font-size: 28px;
+            background-color: #000;
+            color: white;
+            border: none;
+            box-shadow: 0px 4px 13px rgba(255, 0, 0, 0.34);
+            font-family: 'Bakbak One', sans-serif;
+            cursor: pointer;
+            transition: transform 0.2s;
+            border-radius: 10px;
+        }
+
+        .predict-button:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .left-img {
+                width: 80%;
+            }
+
+            .form-section {
+                width: 100%;
+                margin-top: 40px;
+            }
+
+            .predict-button {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <img src="{{ url_for('static', filename='heart.png') }}" alt="Heart" class="left-img glow-effect">
+            <div class="title-left">HEART ATTACK RISK</div>
+        </div>
+
+        <div class="form-section">
+            <div class="form-title">Enter Your Details:</div>
+            <form method="POST" action="/predict_heart" id="heartForm">
+                <input type="number" name="age" placeholder="Age" required>
+
+                <select name="sex" required>
+                    <option value="">Sex</option>
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                </select>
+
+                <select name="cp" required>
+                    <option value="">Chest Pain Type</option>
+                    <option value="0">Typical Angina</option>
+                    <option value="1">Atypical Angina</option>
+                    <option value="2">Non-anginal Pain</option>
+                    <option value="3">Asymptomatic</option>
+                </select>
+
+                <input type="number" name="thalach" placeholder="Max Heart Rate (thalach)" required>
+                <input type="number" step="any" name="oldpeak" placeholder="Oldpeak (ST Depression)" required>
+
+                <select name="exang" required>
+                    <option value="">Exercise Induced Angina?</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+
+                <button type="submit" class="predict-button">Predict!</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
