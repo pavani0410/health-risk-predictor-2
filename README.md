@@ -146,4 +146,4 @@ This project is open-source and available under the MIT License.
 
 ## Credits
 
-Developed by Pavani Sharma and team as a hybrid classical-quantum health prediction system with real-time LLM integration.
+Developed by Pavani Sharma and Shreya Bidare as a hybrid classical-quantum health prediction system with real-time LLM integration.
