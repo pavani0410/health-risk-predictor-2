@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/09d9f6d7-58d9-4ce7-a2d2-353ba0345db3)# Health Risk Predictor using ML, DL, QML and QNN
+# Health Risk Predictor using ML, DL, QML and QNN
 
 This is a Flask-based web application that predicts health risks for **Diabetes**, **Heart Disease**, and **Lung Cancer** using four different types of models:
 - Machine Learning (Random Forest)
