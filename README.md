@@ -1,4 +1,4 @@
-# Health Risk Predictor using ML, DL, QML and QNN
+![image](https://github.com/user-attachments/assets/09d9f6d7-58d9-4ce7-a2d2-353ba0345db3)# Health Risk Predictor using ML, DL, QML and QNN
 
 This is a Flask-based web application that predicts health risks for **Diabetes**, **Heart Disease**, and **Lung Cancer** using four different types of models:
 - Machine Learning (Random Forest)
@@ -7,6 +7,7 @@ This is a Flask-based web application that predicts health risks for **Diabetes*
 - Quantum Neural Networks (QNN with PennyLane and PyTorch)
 
 The application also integrates the **Gemini API** to provide evidence-based medical recommendations if any model flags the patient as at risk.
+![image](https://github.com/user-attachments/assets/9491c482-9999-47fc-9f98-c8f761cac8ac)
 
 ---
 
@@ -135,6 +136,7 @@ The app uses Google’s Gemini API to provide medical recommendations when risk 
 - Displays prediction from all four models (ML, DL, QML, QNN)
 - Shows accuracy of each model from corresponding `metrics.json`
 - If risk is detected, the Gemini API suggests 2–3 helpful actions
+![image](https://github.com/user-attachments/assets/194e1299-407b-4356-8b86-56be325c6197)
 
 ---
 
